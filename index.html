@@ -17,24 +17,25 @@
         <form id="pizza-order">
           <div class="form-group">
             <label for="movies">Pizza Size</label>
+            <p>Medium 12" pie is $12, Large 16" pie is $16, XLarge 20" pie is $20</p>
             <select class="form-control" id="size">
               <option value="" disabled selected>Select Size</option>
-              <option>Medium - 12"</option>
-              <option>Large - 16"</option>
-              <option>X-Large - 20"</option>
+              <option>Medium</option>
+              <option>Large</option>
+              <option>XLarge</option>
             </select>
           </div>
           <div class="form-group">
             <label for="toppings">Pizza Toppings</label>
-            <p>Select Toppings:</p>
-              <input type="checkbox" name="toppings" value="cheese">Cheese<br>
-              <input type="checkbox" name="toppings" value="pepperoni">Pepperoni<br>
-              <input type="checkbox" name="toppings" value="carpool">Mushrooms<br>
-              <input type="checkbox" name="toppings" value="walk">Sausage<br>
-              <input type="checkbox" name="toppings" value="bus">Bell Peppers<br>
-              <input type="checkbox" name="toppings" value="train">Black Olives<br>
-              <input type="checkbox" name="toppings" value="streetcar">Pineapple<br>
-              <input type="checkbox" name="toppings" value="taxi">Arugula<br>
+            <p>Select Toppings (each topping costs $.50):</p>
+              <input type="checkbox" name="toppingcheck" value="sausage">Sausage<br>
+              <input type="checkbox" name="toppingcheck" value="pepperoni">Pepperoni<br>
+              <input type="checkbox" name="toppingcheck" value="bbq">BBQ Chicken<br>
+              <input type="checkbox" name="toppingcheck" value="mushrooms">Mushrooms<br>
+              <input type="checkbox" name="toppingcheck" value="peppers">Bell Peppers<br>
+              <input type="checkbox" name="toppingcheck" value="olives">Black Olives<br>
+              <input type="checkbox" name="toppingcheck" value="pineapple">Pineapple<br>
+              <input type="checkbox" name="toppingcheck" value="arugula">Arugula<br>
           </div>
           <button type="submit" class="btn btn-danger">Submit Order</button>
         </form>
