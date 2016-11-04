@@ -1,38 +1,33 @@
 // backend
 function PizzaOrder(size, toppings) {
-  this.size = "";
+  this.size = size;
   this.toppings = [];
   this.pizzaCost;
 }
-console.log(PizzaOrder);
 
 PizzaOrder.prototype.cost = function() {
-
-  this.pizzaCost = 12;
-  if (this.size === "Large") {
-    this.pizzaCost += 4;
-  } else if (this.size === "XLarge") {
-    this.pizzaCost += 8;
+  if (this.size === 12) {
+    this.pizzaCost = 12;
+  } else if (this.size === 16) {
+    this.pizzaCost = 16;
+  } else {
+    this.pizzaCost = 20;
   }
-  for (var i = 1; i < this.toppings.length; i ++) {
-    this.pizzaCost += .5;
+  for (var i = 0; i <= this.toppings.length; i ++) {
+    this.pizzaCost += 1.5;
   }
-// return pizzaCost;
-  console.log(this.pizzaCost);
 }
 
 PizzaOrder.prototype.receiptStatement = function() {
   return "Your Pizza is: $" + this.pizzaCost;
-}
+};
 
 // UI
-$(document).ready(function(){
-  $("form#pizza-order").submit(function(event){
+$(document).ready(function() {
+  $("form#pizza-order").submit(function(event) {
     event.preventDefault();
-    var pizzaOrderPlaced = new PizzaOrder;
-    console.log(pizzaOrderPlaced);
 
-    var inputSize = $("select#size").val();
+    var inputSize = parseInt($("#size").val());
     console.log(inputSize);
 
     var inputToppings = [];
@@ -41,10 +36,12 @@ $(document).ready(function(){
     });
     console.log(inputToppings);
 
+    var pizzaOrderPlaced = new PizzaOrder (inputSize, inputToppings, 0);
     pizzaOrderPlaced.cost();
     console.log(pizzaOrderPlaced);
 
     $("#receipt").text(pizzaOrderPlaced.receiptStatement());
+    $(".well").show();
 
   });
 });
