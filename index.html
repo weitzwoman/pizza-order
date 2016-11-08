@@ -11,42 +11,46 @@
     <div class="container">
       <div class="jumbotron">
         <h1>Pizza Order</h1>
-        <p>Choose the size and toppings for your pie here!</p>
+        <h3>Choose the size and toppings for your pie here!</h3>
       </div>
 
       <div class="row">
-        <form id="pizza-order">
-          <div class="form-group" >
-            <label for="size">Pizza Size</label>
-            <ul>
-              <li>Medium 12" pie is $12</li>
-              <li>Large 16" pie is $16</li>
-              <li>XLarge 20" pie is $20</li>
-            </ul>
-            <select class="form-control" id="size">
-              <option name="sizeoption" value="" disabled selected>Select Size</option>
-              <option name="sizeoption" value="12">Medium</option>
-              <option name="sizeoption" value="16">Large</option>
-              <option name="sizeoption" value="20">XLarge</option>
-            </select>
+        <div class="col-md-6">
+          <form id="pizza-order">
+            <div class="form-group" >
+              <label for="size">Pizza Size</label>
+              <ul>
+                <li>Medium 12" pie is $12</li>
+                <li>Large 16" pie is $16</li>
+                <li>XLarge 20" pie is $20</li>
+              </ul>
+              <select class="form-control" id="size">
+                <option name="sizeoption" value="" disabled selected>Select Size</option>
+                <option name="sizeoption" value="12">Medium</option>
+                <option name="sizeoption" value="16">Large</option>
+                <option name="sizeoption" value="20">XLarge</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="toppings">Pizza Toppings</label>
+              <p>Select Toppings (each topping costs $1.50):</p>
+                <input type="checkbox" name="toppingcheck" value="sausage">Sausage<br>
+                <input type="checkbox" name="toppingcheck" value="pepperoni">Pepperoni<br>
+                <input type="checkbox" name="toppingcheck" value="bbq">BBQ Chicken<br>
+                <input type="checkbox" name="toppingcheck" value="mushrooms">Mushrooms<br>
+                <input type="checkbox" name="toppingcheck" value="peppers">Bell Peppers<br>
+                <input type="checkbox" name="toppingcheck" value="olives">Black Olives<br>
+                <input type="checkbox" name="toppingcheck" value="pineapple">Pineapple<br>
+                <input type="checkbox" name="toppingcheck" value="arugula">Arugula<br>
+            </div>
+            <button type="submit" class="btn btn-danger">Submit Order</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <div class="well">
+            <h2>Receipt</h2>
+            <p><span id="receipt"></span></p>
           </div>
-          <div class="form-group">
-            <label for="toppings">Pizza Toppings</label>
-            <p>Select Toppings (each topping costs $1.50):</p>
-              <input type="checkbox" name="toppingcheck" value="sausage">Sausage<br>
-              <input type="checkbox" name="toppingcheck" value="pepperoni">Pepperoni<br>
-              <input type="checkbox" name="toppingcheck" value="bbq">BBQ Chicken<br>
-              <input type="checkbox" name="toppingcheck" value="mushrooms">Mushrooms<br>
-              <input type="checkbox" name="toppingcheck" value="peppers">Bell Peppers<br>
-              <input type="checkbox" name="toppingcheck" value="olives">Black Olives<br>
-              <input type="checkbox" name="toppingcheck" value="pineapple">Pineapple<br>
-              <input type="checkbox" name="toppingcheck" value="arugula">Arugula<br>
-          </div>
-          <button type="submit" class="btn btn-danger">Submit Order</button>
-        </form>
-        <div class="well">
-          <h2>Receipt</h2>
-          <p><span id="receipt"></span></p>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 // backend
 function PizzaOrder(size, toppings) {
   this.size = size;
-  this.toppings = [];
+  this.toppings = toppings;
   this.pizzaCost;
 }
 
@@ -12,8 +12,7 @@ PizzaOrder.prototype.cost = function() {
     this.pizzaCost = 16;
   } else {
     this.pizzaCost = 20;
-  }
-  for (var i = 0; i <= this.toppings.length; i ++) {
+  } for (var i = 0; i < this.toppings.length; i ++) {
     this.pizzaCost += 1.5;
   }
 }
@@ -26,22 +25,15 @@ PizzaOrder.prototype.receiptStatement = function() {
 $(document).ready(function() {
   $("form#pizza-order").submit(function(event) {
     event.preventDefault();
-
     var inputSize = parseInt($("#size").val());
-    console.log(inputSize);
-
     var inputToppings = [];
     $("input:checkbox[name=toppingcheck]:checked").each(function(){
       inputToppings.push($(this).val());
     });
-    console.log(inputToppings);
 
-    var pizzaOrderPlaced = new PizzaOrder (inputSize, inputToppings, 0);
+    var pizzaOrderPlaced = new PizzaOrder (inputSize, inputToppings);
     pizzaOrderPlaced.cost();
-    console.log(pizzaOrderPlaced);
-
     $("#receipt").text(pizzaOrderPlaced.receiptStatement());
     $(".well").show();
-
   });
 });
